@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1, title: "Learn Vue", completed: false },
+        { id: 1, title: "Learn Vue3", completed: false },
         { id: 2, title: "Make cool project", completed: false },
         { id: 3, title: "Drink coke", completed: false },
       ],
