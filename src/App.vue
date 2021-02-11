@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
+    <main class="todo">
+      <h1 class="todo__title">TODO application</h1>
+      <TodoList v-bind:todos="todos" />
+    </main>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import TodoList from "@/components/TodoList";
+export default {
+  components: {
+    TodoList,
+  },
+  data() {
+    return {
+      todos: [
+        { id: 1, title: "Learn Vue", completed: false },
+        { id: 2, title: "Make cool project", completed: false },
+        { id: 3, title: "Drink coke", completed: false },
+      ],
+    };
+  },
+};
+</script>
 
-#nav {
-  padding: 30px;
-
-  a {
+<style lang="scss" scoped>
+.todo {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #1b1612;
+  &__title {
+    font-size: 36px;
+    margin: 20px;
     font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    color: #f8a73f;
   }
 }
 </style>
