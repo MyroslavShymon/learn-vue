@@ -35,7 +35,7 @@ export default {
   flex-direction: column;
   color: #1b1612;
   &__title {
-    font-size: 37px;
+    font-size: 36px;
     margin: 20px;
     font-weight: bold;
     color: #f8a73f;
