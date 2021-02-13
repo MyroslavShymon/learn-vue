@@ -1,12 +1,29 @@
 <template>
   <li class="todo__item">
     <div class="todo__wrap">
-      <input class="todo_checkbox" type="checkbox" />
-      <div class="todo__text">
-        {{ ` ${todo.id} ${todo.title} ${todo.completed} ` }}
+      <input
+        class="todo_checkbox"
+        type="checkbox"
+        v-on:change="
+          {
+            todo.completed = !todo.completed;
+          }
+        "
+      />
+      <div class="todo__id">{{ ` ${indexTodo + 1} ` }}</div>
+      <div
+        class="todo__text"
+        v-bind:class="{ todo__text_active: todo.completed }"
+      >
+        {{ ` ${todo.title} ` }}
       </div>
     </div>
-    <button class="button todo__btn">&times;</button>
+    <button
+      class="button todo__btn"
+      v-on:click="$emit('remove-todo-item', todo.id)"
+    >
+      &times;
+    </button>
   </li>
 </template>
 
@@ -17,6 +34,7 @@ export default {
       type: Object,
       required: true,
     },
+    indexTodo: Number,
   },
 };
 </script>
@@ -48,9 +66,15 @@ export default {
   }
   &__wrap {
     display: flex;
+    width: calc(100% - 35px);
+  }
+  &__id {
+    margin: 0 5px 0 17px;
   }
   &__text {
-    margin: 0 0 0 17px;
+    &_active {
+      text-decoration: line-through;
+    }
   }
 }
 </style>
