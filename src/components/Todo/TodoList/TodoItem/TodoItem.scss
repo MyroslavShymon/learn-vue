@@ -1,0 +1,37 @@
+.todo {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px;
+    background: #db5c01;
+    border-radius: 20px;
+    margin: 20px 0;
+    font-weight: bold;
+    border: 2px solid #ec731c;
+    -webkit-box-shadow: 4px 4px 12px -4px #000000;
+    box-shadow: 4px 4px 12px -4px #000000;
+  }
+  &__btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__wrap {
+    display: flex;
+    width: calc(100% - 35px);
+  }
+  &__id {
+    margin: 0 5px 0 17px;
+  }
+  &__text {
+    &_active {
+      text-decoration: line-through;
+    }
+  }
+}

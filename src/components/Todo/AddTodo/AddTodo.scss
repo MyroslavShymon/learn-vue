@@ -1,0 +1,36 @@
+form {
+  width: 37%;
+}
+input {
+  width: 83%;
+  padding: 4px 8px;
+}
+button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 7px 15px;
+  padding: 3px 10px;
+  position: relative;
+  border: 2px solid $color2-orange;
+  color: $color2-orange;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.4s;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.4s;
+  }
+  &:hover::after {
+    border-color: $color2-orange;
+    width: calc(100% - 10px);
+    height: calc(100% + 10px);
+  }
+}

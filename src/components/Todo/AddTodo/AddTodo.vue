@@ -12,6 +12,7 @@ export default {
       title: "",
     };
   },
+  //props: ["todos"],
   methods: {
     onSubmit() {
       if (this.title.trim()) {
@@ -20,6 +21,8 @@ export default {
           title: this.title,
           completed: false,
         };
+        //this.todos.push(newTodo);
+        console.log(this);
         this.$emit("add-todo", newTodo);
       }
 
@@ -28,3 +31,8 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/variables.scss";
+@import "./AddTodo.scss";
+</style>

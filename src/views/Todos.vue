@@ -2,7 +2,7 @@
   <main class="todo">
     <h2 class="todo__title">TODOS</h2>
     <router-link to="/">home</router-link>
-    <AddTodo @add-todo="AddTodo" />
+    <AddTodo @add-todo="AddTodo" v-bind:todos="todos" />
     <Loader v-if="loading" />
     <TodoList
       v-bind:todos="todos"
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import TodoList from "@/components/TodoList";
-import AddTodo from "@/components/AddTodo";
-import Loader from "@/components/Loader";
+import TodoList from "@/components/Todo/TodoList/TodoList";
+import AddTodo from "@/components/Todo/AddTodo/AddTodo";
+import Loader from "@/components/Loader/Loader";
 export default {
   components: {
     TodoList,
@@ -36,6 +36,7 @@ export default {
     },
     AddTodo(todo) {
       this.todos.push(todo);
+      console.log(this);
     },
   },
   data() {

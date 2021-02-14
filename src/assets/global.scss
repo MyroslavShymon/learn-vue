@@ -1,7 +1,32 @@
+@import "@/assets/variables.scss";
 body {
   background: linear-gradient(
     207deg,
     rgba(64, 64, 64, 1) 0%,
     rgba(57, 51, 51, 1) 100%
   );
+}
+h2 {
+  font-size: 18px;
+  margin: 10px;
+  font-weight: bold;
+  color: $color2-orange;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: $color2-orange;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 10px;
+}
+a:hover {
+  text-decoration: none;
+  color: $color1-orange;
+  border-bottom: 2px solid $color1-orange;
+}
+a:visited {
+  text-decoration: none;
+  color: $color3-orange;
 }

@@ -12,3 +12,12 @@
 </template>
 
 <script></script>
+
+<style lang="scss" scoped>
+div {
+  text-align: center;
+}
+p {
+  padding: 20px 200px;
+}
+</style>
